@@ -1,16 +1,18 @@
 Restful test project
+====================
 
 Run application:
-1. clone project inside your virtual host root directory: git clone https://github.com/gnatyuk/rest.git .
-2. go to project directory and run command: composer install
-3. open /config/db.php and setup your database configurations
-4. run project migrations: ./yii migrate/up
+- clone project inside your virtual host root directory: git clone https://github.com/gnatyuk/rest.git .
+- go to project directory and run command: composer install
+- open /config/db.php and setup your database configurations
+- run project migrations: ./yii migrate/up
 
 ==================================================================================
 ==================================================================================
 
 User login (get access token):
 
+```
 POST /v1/users/login HTTP/1.1
 Host: 127.0.0.1:8080
 Cache-Control: no-cache
@@ -18,6 +20,7 @@ Postman-Token: 7fdaa428-9c5c-84b1-9512-1e3dd5393ccf
 Content-Type: application/x-www-form-urlencoded
 
 username=tester&password=tester
+```
 
 ==================================================================================
 
