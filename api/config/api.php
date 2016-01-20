@@ -2,6 +2,7 @@
  
 $db     = require(__DIR__ . '/../../config/db.php');
 $params = require(__DIR__ . '/params.php');
+$routes = require(__DIR__ . '/routes.php');
 
 $config = [
     'id' => 'api',
@@ -40,10 +41,7 @@ $config = [
             'enablePrettyUrl' => true,
             'enableStrictParsing' => true,
             'showScriptName' => false,
-            'rules' => [
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/category'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'v1/product'],
-            ],
+            'rules' => $routes
         ], 
         'db' => $db,
     ],

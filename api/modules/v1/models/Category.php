@@ -10,4 +10,24 @@ class Category extends ActiveRecord
     {
         return 'category';
     }
+
+    /**
+     * @return array the validation rules.
+     */
+    public function rules()
+    {
+        return [
+            // title is required
+            ['title', 'required'],
+            // checks if "title" is a string whose length is between 4 and 255
+            ['title', 'string', 'length' => [4, 255]],
+            // title must be unique
+            ['title', 'unique']
+        ];
+    }
+
+    public function getProducts() 
+    {
+	    return $this->hasMany(Product::className(), ['category_id' => 'id']);
+	}
 }
